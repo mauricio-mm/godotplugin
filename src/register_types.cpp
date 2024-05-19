@@ -1,5 +1,6 @@
 #include "register_types.h"
-#include "Controls.h"
+#include "controls.h"
+#include "primary_mesh.h"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -13,6 +14,7 @@ void initialize_register(ModuleInitializationLevel p_level){
     if(p_level != MODULE_INITIALIZATION_LEVEL_SCENE) return;
 
     ClassDB::register_class<Controls>();
+    ClassDB::register_class<PrimaryMesh>();
 
 }
 
@@ -23,7 +25,7 @@ void unitialize_register(ModuleInitializationLevel p_level){
 }
 
 extern "C"{
-    GDExtensionBool GDE_EXPORT hello_world_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization){
+    GDExtensionBool GDE_EXPORT register_types_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization){
         
         GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
 

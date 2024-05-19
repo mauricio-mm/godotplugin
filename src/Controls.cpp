@@ -1,4 +1,4 @@
-#include "Controls.h"
+#include "controls.h"
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/godot.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
@@ -19,7 +19,7 @@ Controls::Controls(){
     {                    
         set_process_mode(Node::ProcessMode::PROCESS_MODE_DISABLED);
     }
-    UtilityFunctions::print("Hello World!");
+    UtilityFunctions::print("Controls.cpp Loaded!");
 }
 
 Controls::~Controls(){

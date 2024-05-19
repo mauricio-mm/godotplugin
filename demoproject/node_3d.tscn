@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://diamg8xlthoe5"]
+[gd_scene load_steps=6 format=3 uid="uid://diamg8xlthoe5"]
 
 [ext_resource type="PackedScene" uid="uid://ddd1h4p7y1123" path="res://Cube.glb" id="1_de5lm"]
 [ext_resource type="PackedScene" uid="uid://rfoyg37lvmd1" path="res://Terrain.glb" id="2_ny7a1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moilo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6riw"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_em64w"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -16,12 +22,17 @@ transform = Transform3D(1, 0, 0, 0, 0.956499, 0.291737, 0, -0.291737, 0.956499, 
 
 [node name="Terrain" parent="." instance=ExtResource("2_ny7a1")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.939274, 0.242656, 0.242656, -0.343168, -0.664167, -0.664167, 1.41367e-08, -0.707107, 0.707107, -1.82676, 14.2919, 5)
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="DirectionalLight3D"]
-transform = Transform3D(0.999999, 4.90679e-08, 5.52402e-08, 2.54563e-07, 0.999998, 0, 8.81638e-08, -2.98023e-07, 1, 1.9543, 14.7132, 0.311291)
-radius = 2.0
-radial_segments = 20
-rings = 15
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115332, 0.261665, -10.3937)
+material_override = SubResource("StandardMaterial3D_moilo")
+material_overlay = SubResource("StandardMaterial3D_q6riw")
+transparency = 1.0
+custom_aabb = AABB(1, 2, 1, 1, 1, 1)
+lod_bias = 128.0
+ignore_occlusion_culling = true
+mesh = SubResource("ArrayMesh_em64w")

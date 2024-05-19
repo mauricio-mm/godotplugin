@@ -1,0 +1,9 @@
+[configuration]
+
+entry_symbol = "register_types_init"
+compatibility_minimum = 4.1
+
+[libraries]
+
+windows.debug.x86_64 = "res://bin/RegisterTypes.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://bin/RegisterTypes.windows.template_debug.x86_64.dll"
