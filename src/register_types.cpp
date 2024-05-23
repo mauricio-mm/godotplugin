@@ -1,6 +1,6 @@
 #include "register_types.h"
 #include "controls.h"
-#include "primary_mesh.h"
+#include "terrain.h"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -14,7 +14,7 @@ void initialize_register(ModuleInitializationLevel p_level){
     if(p_level != MODULE_INITIALIZATION_LEVEL_SCENE) return;
 
     ClassDB::register_class<Controls>();
-    ClassDB::register_class<PrimaryMesh>();
+    ClassDB::register_class<Terrain>();
 
 }
 

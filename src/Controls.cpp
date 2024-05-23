@@ -1,4 +1,5 @@
 #include "controls.h"
+
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/godot.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
@@ -7,8 +8,7 @@
 
 using namespace godot;
 
-void Controls::_bind_methods()
-{            
+void Controls::_bind_methods(){                
     ClassDB::bind_method(D_METHOD("get_speed"), &Controls::get_speed);
     ClassDB::bind_method(D_METHOD("set_speed", "speed"), &Controls::set_speed);
     ClassDB::add_property("Controls", PropertyInfo(Variant::FLOAT, "speed"), "set_speed", "get_speed");    
